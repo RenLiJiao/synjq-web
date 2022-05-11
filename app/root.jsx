@@ -6,17 +6,23 @@ import {
     Scripts,
     ScrollRestoration,
 } from '@remix-run/react'
-import styles from './styles/app.css'
-
-export function links() {
-    return [{ rel: 'stylesheet', href: styles }]
-}
 
 export const meta = () => ({
     charset: 'utf-8',
-    title: 'New Remix App',
+    title: 'Synjq - 首页',
     viewport: 'width=device-width,initial-scale=1',
 })
+
+import styles from './styles/app.css'
+import normalizeCss from 'normalize.css/normalize.css'
+import blueprint from '@blueprintjs/core/lib/css/blueprint.css'
+import blueprintIcons from '@blueprintjs/icons/lib/css/blueprint-icons.css'
+export const links = () => [
+    { rel: 'stylesheet', href: styles },
+    { rel: 'stylesheet', href: normalizeCss },
+    { rel: 'stylesheet', href: blueprint },
+    { rel: 'stylesheet', href: blueprintIcons },
+]
 
 export default function App() {
     return (
