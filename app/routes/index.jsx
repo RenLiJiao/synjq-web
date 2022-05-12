@@ -1,12 +1,24 @@
-import { Button } from '@blueprintjs/core'
+import { Navbar, Alignment, Button } from '@blueprintjs/core'
 
 export default function Index() {
     return (
-        <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
-            <h1 className="text-3xl font-bold underline mb-20">
-                Welcome to Remix
-            </h1>
-            <Button intent="success" text="测试" />
-        </div>
+        <>
+            <Navbar fixedToTop>
+                <Navbar.Group align={Alignment.LEFT}>
+                    <Navbar.Heading>九桥同步 Synjq</Navbar.Heading>
+                    <Navbar.Divider />
+                    <Button
+                        className="bp4-minimal"
+                        icon="data-lineage"
+                        text="数据链路"
+                    />
+                    <Button
+                        className="bp4-minimal"
+                        icon="database"
+                        text="数据节点"
+                    />
+                </Navbar.Group>
+            </Navbar>
+        </>
     )
 }
