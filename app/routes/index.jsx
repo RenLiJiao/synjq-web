@@ -5,7 +5,9 @@ export default function Index() {
         <>
             <Navbar fixedToTop>
                 <Navbar.Group align={Alignment.LEFT}>
-                    <Navbar.Heading>九桥同步 Synjq</Navbar.Heading>
+                    <Navbar.Heading>
+                        <div>九桥同步 Synjq</div>
+                    </Navbar.Heading>
                     <Navbar.Divider />
                     <Button
                         className="bp4-minimal"
@@ -17,6 +19,9 @@ export default function Index() {
                         icon="database"
                         text="数据节点"
                     />
+                </Navbar.Group>
+                <Navbar.Group align={Alignment.RIGHT}>
+                    <Button className="bp4-minimal" icon="notifications" />
                 </Navbar.Group>
             </Navbar>
         </>
