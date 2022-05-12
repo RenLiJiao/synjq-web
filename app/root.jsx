@@ -14,12 +14,12 @@ export const meta = () => ({
 })
 
 import styles from './styles/app.css'
-import normalizeCss from 'normalize.css/normalize.css'
+import normalizeCSS from 'normalize.css/normalize.css'
 import blueprint from '@blueprintjs/core/lib/css/blueprint.css'
 import blueprintIcons from '@blueprintjs/icons/lib/css/blueprint-icons.css'
 export const links = () => [
     { rel: 'stylesheet', href: styles },
-    { rel: 'stylesheet', href: normalizeCss },
+    { rel: 'stylesheet', href: normalizeCSS },
     { rel: 'stylesheet', href: blueprint },
     { rel: 'stylesheet', href: blueprintIcons },
 ]
