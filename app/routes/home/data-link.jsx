@@ -1,7 +1,7 @@
-export default function DataFlow() {
+export default function DataLink() {
     return (
         <div className="mx-auto">
-            <p>数据流向</p>
+            <p>数据链路</p>
         </div>
     )
 }
