@@ -1,8 +1,8 @@
 {
-    "name": "synjq",
-    "version": "1.0.0",
+    "name": "synjq-web",
+    "version": "0.0.1",
     "private": true,
-    "description": "synjq - the almighty data syncing tool",
+    "description": "The web frontend of synjq: the almighty data syncing tool",
     "license": "",
     "sideEffects": false,
     "scripts": {

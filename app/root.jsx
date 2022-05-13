@@ -9,7 +9,7 @@ import {
 
 export const meta = () => ({
     charset: 'utf-8',
-    title: 'Synjq - 首页',
+    title: '九桥同步 Synjq',
     viewport: 'width=device-width,initial-scale=1',
 })
 
