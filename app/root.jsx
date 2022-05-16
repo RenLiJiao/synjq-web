@@ -13,7 +13,7 @@ export const meta = () => ({
     viewport: 'width=device-width,initial-scale=1',
 })
 
-import styles from './styles/app.css'
+import styles from '~/styles/app.css'
 import normalizeCSS from 'normalize.css/normalize.css'
 import blueprint from '@blueprintjs/core/lib/css/blueprint.css'
 import blueprintIcons from '@blueprintjs/icons/lib/css/blueprint-icons.css'

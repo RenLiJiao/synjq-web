@@ -4,8 +4,8 @@ export const meta = () => ({ title: '数据节点 | 九桥同步 Synjq' })
 
 export default function DataNode() {
     return (
-        <div className="flex flex-col">
-            <div className="flex items-center justify-between h-16 px-6">
+        <div className="flex flex-col py-4">
+            <div className="flex items-center justify-between">
                 <InputGroup
                     className="w-1/4"
                     leftIcon="search"
