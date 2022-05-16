@@ -1,5 +1,7 @@
 import { InputGroup, Button, NonIdealState } from '@blueprintjs/core'
 
+export const meta = () => ({ title: '数据节点 | 九桥同步 Synjq' })
+
 export default function DataNode() {
     return (
         <div className="flex flex-col">
