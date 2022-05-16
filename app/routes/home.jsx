@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from '@remix-run/react'
+import { NavLink, Link, Outlet } from '@remix-run/react'
 import { Navbar, Alignment, Button } from '@blueprintjs/core'
 
 export const meta = () => ({ title: '首页 | 九桥同步 Synjq' })
@@ -9,9 +9,14 @@ export default function Home() {
             <Navbar>
                 <Navbar.Group align={Alignment.LEFT}>
                     <Navbar.Heading>
-                        <div className="font-bold text-xl font-serif">
-                            九桥同步 Synjq
-                        </div>
+                        <Link
+                            className="text-inherit hover:text-inherit hover:no-underline"
+                            to="/home"
+                        >
+                            <div className="font-bold text-xl font-serif">
+                                九桥同步 Synjq
+                            </div>
+                        </Link>
                     </Navbar.Heading>
                     <Navbar.Divider />
                     <NavLink

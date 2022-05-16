@@ -490,6 +490,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-weight: 700;
 }
 
+.text-inherit {
+  color: inherit;
+}
+
+.hover\:text-inherit:hover {
+  color: inherit;
+}
+
 .hover\:no-underline:hover {
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
