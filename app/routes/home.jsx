@@ -7,7 +7,7 @@ export default function Home() {
     return (
         <>
             <Navbar>
-                <Navbar.Group align={Alignment.LEFT}>
+                <Navbar.Group className="pl-3" align={Alignment.LEFT}>
                     <Navbar.Heading>
                         <Link
                             className="text-inherit hover:text-inherit hover:no-underline"
