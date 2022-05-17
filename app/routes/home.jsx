@@ -1,10 +1,7 @@
 import { NavLink, Link, Outlet } from '@remix-run/react'
 import { Navbar, Alignment, Button } from '@blueprintjs/core'
-import custom from '~/styles/custom.css'
 
 export const meta = () => ({ title: '首页 | 九桥同步 Synjq' })
-
-export const links = () => [{ rel: 'stylesheet', href: custom }]
 
 export default function Home() {
     return (
