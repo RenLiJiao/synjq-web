@@ -1,11 +1,7 @@
-import Home from './home'
-import { getUser } from '~/models/user.server'
+import { redirect } from '@remix-run/node'
 
-export const loader = () => {
-    return getUser()
-}
+export const loader = () => redirect('/home')
 
 export default function Index() {
-    // TODO: check user login status
-    return <Home />
+    return null
 }

@@ -1,7 +1,15 @@
 import { NavLink, Link, Outlet } from '@remix-run/react'
 import { Navbar, Alignment, Button } from '@blueprintjs/core'
+import { redirect } from '@remix-run/node'
 
 export const meta = () => ({ title: '首页 | 九桥同步 Synjq' })
+
+import { getUser } from '~/models/user.server'
+
+export const loader = () => {
+    const currentUser = getUser()
+    return currentUser ? { currentUser } : redirect('/login')
+}
 
 export default function Home() {
     return (
