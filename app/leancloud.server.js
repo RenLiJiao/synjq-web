@@ -1,4 +1,4 @@
-import AV from 'leancloud-storage'
+import AV from 'leancloud-storage/live-query'
 
 const production = process.env.NODE_ENV === 'production'
 
