@@ -1,5 +1,5 @@
 import { NavLink, Link, Outlet } from '@remix-run/react'
-import { Navbar, Alignment, Button, Card } from '@blueprintjs/core'
+import { Navbar, Alignment, Button } from '@blueprintjs/core'
 import custom from '~/styles/custom.css'
 
 export const meta = () => ({ title: '首页 | 九桥同步 Synjq' })
@@ -65,9 +65,9 @@ export default function Home() {
                     <Button minimal icon="notifications" />
                 </Navbar.Group>
             </Navbar>
-            <Card className="bp4-dark min-h-screen navbar-escape">
+            <main className="bp4-dark dark-background min-h-screen navbar-escape">
                 <Outlet />
-            </Card>
+            </main>
         </>
     )
 }

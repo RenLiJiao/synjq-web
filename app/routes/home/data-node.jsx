@@ -4,7 +4,7 @@ export const meta = () => ({ title: '数据节点 | 九桥同步 Synjq' })
 
 export default function DataNode() {
     return (
-        <div className="flex flex-col py-4">
+        <div className="flex flex-col px-6 py-4">
             <div className="flex items-center justify-between">
                 <InputGroup
                     className="w-1/4"
@@ -17,7 +17,7 @@ export default function DataNode() {
                 </Button>
             </div>
             <div className="flex-1 flex flex-col">
-                <div className="mt-48">
+                <div className="mt-36">
                     <NonIdealState
                         icon="archive"
                         title="暂无节点"
