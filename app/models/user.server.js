@@ -9,15 +9,7 @@ export const getUser = () => {
     return user
 }
 
-export const login = async ({ email, password }) => {
-    const user = await AV.User.loginWithEmail(email, password)
-    if (!user) {
-        throw new Error('用户名或密码错误')
-    }
-    return user
-}
+export const login = async ({ email, password }) =>
+    await AV.User.loginWithEmail(email, password)
 
-export const logout = async () => {
-    await AV.User.logOut()
-    return redirect('/login')
-}
+export const logout = async () => await AV.User.logOut()

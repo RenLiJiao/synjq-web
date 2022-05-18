@@ -1,12 +1,14 @@
 import AV from 'leancloud-storage/live-query'
 
-const production = process.env.NODE_ENV === 'production'
+const { LEANCLOUD_APP_ID, LEANCLOUD_APP_KEY, SERVER_URL, NODE_ENV } =
+    process.env
+const production = NODE_ENV === 'production'
 
 const init = () => {
     AV.init({
-        appId: 'aXF1nkSLFcfI8d6bxTNXVB1x-gzGzoHsz',
-        appKey: 'CzynxdWcDiJpnCL4hLwhxksR',
-        serverURL: 'https://api.tb-soft.net',
+        appId: LEANCLOUD_APP_ID,
+        appKey: LEANCLOUD_APP_KEY,
+        serverURL: SERVER_URL,
         production,
     })
 }
