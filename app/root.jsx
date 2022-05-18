@@ -28,7 +28,7 @@ export const links = () => [
 
 export default function App() {
     return (
-        <html lang="zh">
+        <html lang="zh" className="dark-background">
             <head>
                 <Meta />
                 <Links />

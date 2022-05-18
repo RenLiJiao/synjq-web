@@ -71,7 +71,7 @@ export default function Home() {
                     <Button minimal icon="notifications" />
                 </Navbar.Group>
             </Navbar>
-            <main className="bp4-dark dark-background min-h-screen navbar-escape">
+            <main className="bp4-dark min-h-screen navbar-escape">
                 <Outlet />
             </main>
         </>

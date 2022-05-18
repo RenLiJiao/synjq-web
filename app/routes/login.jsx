@@ -40,7 +40,7 @@ export default function Login() {
     }, [actionData])
 
     return (
-        <div className="flex justify-center items-center bp4-dark dark-background h-screen">
+        <div className="flex justify-center items-center bp4-dark h-screen">
             <div className="flex flex-col w-72">
                 <div className="self-center text-white font-bold text-3xl font-serif">
                     九桥同步 Synjq

@@ -3,7 +3,8 @@
     "version": "0.0.1",
     "private": true,
     "description": "The web frontend of synjq: the almighty data syncing tool",
-    "license": "",
+    "author": "Bokang Huang <huangbokang@tb-soft.net>",
+    "homepage": "https://app.tb-soft.net/",
     "sideEffects": false,
     "scripts": {
         "build": "npm run build:css && remix build",
