@@ -1,15 +1,14 @@
 import { redirect } from '@remix-run/node'
-import AV from '~/leancloud.server'
+import db from '~/db.server'
 
 export const getUser = () => {
-    const user = AV.User.current()
+    const user = db.data
     if (!user) {
         throw redirect('/login')
     }
     return user
 }
 
-export const login = async ({ email, password }) =>
-    await AV.User.loginWithEmail(email, password)
+export const login = async ({ email, password }) => null
 
-export const logout = async () => await AV.User.logOut()
+export const logout = async () => null
