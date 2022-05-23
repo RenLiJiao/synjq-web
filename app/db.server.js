@@ -2,11 +2,7 @@ import { Low, JSONFile } from 'lowdb'
 
 let db
 
-const initDB = () => {
-    const adapter = new JSONFile(process.env.DATABASE_URL)
-    const lowDB = new Low(adapter)
-    return lowDB
-}
+const initDB = () => new Low(new JSONFile(process.env.DATABASE_URL))
 
 if (process.env.NODE_ENV === 'production') {
     db = initDB()
