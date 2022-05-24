@@ -9,6 +9,6 @@ export const getUser = () => {
     return user
 }
 
-export const login = async ({ email, password }) => null
+export const login = async ({ username, password }) => null
 
 export const logout = async () => null

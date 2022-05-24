@@ -3,7 +3,6 @@
  */
 module.exports = {
     ignoredRouteFiles: ['**/.*'],
-    serverDependenciesToBundle: ['lowdb', 'steno'],
     // appDirectory: "app",
     // assetsBuildDirectory: "public/build",
     // serverBuildPath: "build/index.js",
