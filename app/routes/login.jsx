@@ -1,4 +1,4 @@
-import { redirect, json } from '@remix-run/node'
+import { json } from '@remix-run/node'
 import { Form, useActionData, useTransition } from '@remix-run/react'
 import { useEffect, useRef } from 'react'
 import {
@@ -9,7 +9,6 @@ import {
     Position,
 } from '@blueprintjs/core'
 import { login } from '~/models/user.server'
-import { createUserSession } from '~/session.server'
 
 export const meta = () => ({ title: '登录 | 九桥同步 Synjq' })
 
@@ -19,8 +18,7 @@ export const action = async ({ request }) => {
     const password = formData.get('password')
 
     try {
-        const { id: userId } = await login({ username, password })
-        return createUserSession(userId, '/home')
+        return await login({ username, password })
     } catch (error) {
         return json({ error }, { status: 400 })
     }

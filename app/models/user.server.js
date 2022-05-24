@@ -2,9 +2,13 @@ import { redirect } from '@remix-run/node'
 import bcrypt from 'bcryptjs'
 
 import prisma from '~/db.server'
-import { getUserSession } from '~/session.server'
+import {
+    getUserSession,
+    createUserSession,
+    destroyUserSession,
+} from '~/session.server'
 
-const findUser = async (query) => {
+const fetchUser = async (query) => {
     const user = await prisma.user.findUnique({
         where: query,
     })
@@ -20,17 +24,20 @@ export const getUser = async (request) => {
         throw redirect('/login')
     }
 
-    const user = findUser({ id: userId })
+    const user = await fetchUser({ id: userId })
     return user
 }
 
 export const login = async ({ username, password }) => {
-    const user = findUser({ username })
+    const user = await fetchUser({ username })
 
     const isCorrectPassword = await bcrypt.compare(password, user.password)
     if (!isCorrectPassword) throw '密码不正确'
 
-    return user
+    return createUserSession(user.id, '/home')
 }
 
-export const logout = async () => null
+export const logout = async (request) => {
+    const session = await getUserSession(request)
+    return destroyUserSession(session, '/home')
+}

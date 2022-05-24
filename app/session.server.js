@@ -30,6 +30,14 @@ export async function createUserSession(userId, redirectTo) {
     })
 }
 
+export async function destroyUserSession(session, redirectTo) {
+    return redirect(redirectTo, {
+        headers: {
+            'Set-Cookie': await storage.destroySession(session),
+        },
+    })
+}
+
 export function getUserSession(request) {
     return storage.getSession(request.headers.get('Cookie'))
 }
