@@ -9,6 +9,7 @@ import {
     Position,
 } from '@blueprintjs/core'
 import { login } from '~/models/user.server'
+import { createUserSession } from '~/session.server'
 
 export const meta = () => ({ title: '登录 | 九桥同步 Synjq' })
 
@@ -18,10 +19,10 @@ export const action = async ({ request }) => {
     const password = formData.get('password')
 
     try {
-        await login({ username, password })
-        return redirect('/home')
+        const { id: userId } = await login({ username, password })
+        return createUserSession(userId, '/home')
     } catch (error) {
-        return json(error, { status: 400 })
+        return json({ error }, { status: 400 })
     }
 }
 
@@ -33,7 +34,7 @@ export default function Login() {
     useEffect(() => {
         if (actionData) {
             toastRef.current?.show({
-                message: actionData.rawMessage,
+                message: actionData.error,
                 intent: 'danger',
             })
         }
