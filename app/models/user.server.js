@@ -39,5 +39,5 @@ export const login = async ({ username, password }) => {
 
 export const logout = async (request) => {
     const session = await getUserSession(request)
-    return destroyUserSession(session, '/home')
+    return destroyUserSession(session, '/login')
 }
