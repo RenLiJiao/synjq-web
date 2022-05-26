@@ -1,4 +1,4 @@
-import { redirect, json } from '@remix-run/node'
+import { json } from '@remix-run/node'
 import { Form, useActionData, useTransition } from '@remix-run/react'
 import { useEffect, useRef } from 'react'
 import {
@@ -14,14 +14,13 @@ export const meta = () => ({ title: '登录 | 九桥同步 Synjq' })
 
 export const action = async ({ request }) => {
     const formData = await request.formData()
-    const email = formData.get('email')
+    const username = formData.get('username')
     const password = formData.get('password')
 
     try {
-        await login({ email, password })
-        return redirect('/home')
+        return await login({ username, password })
     } catch (error) {
-        return json(error, { status: 400 })
+        return json({ error }, { status: 400 })
     }
 }
 
@@ -33,7 +32,7 @@ export default function Login() {
     useEffect(() => {
         if (actionData) {
             toastRef.current?.show({
-                message: actionData.rawMessage,
+                message: actionData.error,
                 intent: 'danger',
             })
         }
@@ -46,16 +45,15 @@ export default function Login() {
                     九桥同步 Synjq
                 </div>
                 <Form method="post" className="mt-8">
-                    <FormGroup labelFor="email">
+                    <FormGroup labelFor="username">
                         <InputGroup
                             autoFocus
                             required
                             disabled={!!submission}
-                            id="email"
-                            name="email"
-                            type="email"
-                            leftIcon="envelope"
-                            placeholder="请输入邮箱"
+                            id="username"
+                            name="username"
+                            leftIcon="user"
+                            placeholder="请输入用户名"
                         />
                     </FormGroup>
                     <FormGroup disabled={!!submission} labelFor="password">

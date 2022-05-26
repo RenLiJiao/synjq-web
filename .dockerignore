@@ -6,6 +6,3 @@
 /build
 /public/build
 .env
-
-/app/styles/app.css
-/prisma/dev.db

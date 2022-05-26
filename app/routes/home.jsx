@@ -22,9 +22,9 @@ import { getUser } from '~/models/user.server'
 
 export const meta = () => ({ title: '首页 | 九桥同步 Synjq' })
 
-export const loader = () =>
+export const loader = async ({ request }) =>
     json({
-        user: getUser(),
+        user: await getUser(request),
     })
 
 export default function Home() {
@@ -89,7 +89,8 @@ export default function Home() {
                     <Popover
                         content={
                             <Menu>
-                                <UserProfile user={user} />
+                                <MenuItem icon="user" text={user.realname} />
+                                {/* <UserProfile user={user} /> */}
                                 <MenuDivider />
                                 <MenuItem
                                     icon="trash"
