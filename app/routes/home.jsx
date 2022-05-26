@@ -89,7 +89,8 @@ export default function Home() {
                     <Popover
                         content={
                             <Menu>
-                                <UserProfile user={user} />
+                                <MenuItem icon="user" text={user.realname} />
+                                {/* <UserProfile user={user} /> */}
                                 <MenuDivider />
                                 <MenuItem
                                     icon="trash"
